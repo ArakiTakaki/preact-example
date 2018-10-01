@@ -1,3 +1,5 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   mode: 'development',
   entry: [
@@ -20,7 +22,11 @@ module.exports = {
     publicPath: '/',
     filename: 'bundle.js'
   },
+  plugins:[
+    new HtmlWebpackPlugin({template: __dirname + "/public/index.html"})
+  ],
   devServer: {
-    contentBase: './public'
+    contentBase: './public',
+    port: 3000
   }
 };

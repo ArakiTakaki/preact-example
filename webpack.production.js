@@ -1,5 +1,7 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  mode: 'development',
+  mode: 'production',
   entry: [
     './src/index.jsx'
   ],
@@ -9,18 +11,21 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.html$/,
+        loader: "html-loader"
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx','.html']
   },
+  plugins:[
+    new HtmlWebpackPlugin({template: __dirname + "/public/index.html"})
+  ],
   output: {
     path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: './public'
+    filename: 'js/bundle_[hash:4].js'
   }
 };
