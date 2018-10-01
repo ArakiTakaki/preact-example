@@ -1,21 +1,22 @@
 import { h, render, Component } from 'preact';
 import { observer } from 'mobx-preact';
-import { observable } from 'mobx';
-
+import store from './store/state';
+import * as Actions from './store/action';
 
 @observer
 class App extends Component {
   render() {
-    console.log(this.props.person)
-    console.log(this.props.person.name)
     return (
       <div>
-        <div>{this.props.person.name}</div>
+        <p>
+          {this.props.store.number}
+        </p>
+        <button onClick={Actions.increment}>+</button>
+        <button onClick={Actions.decrement}>-</button>
       </div>
     )
   }
 }
 
-const person = observable({ name: "John" });
-render(<App person={person} />, document.getElementById('mount'));
-person.name = "Mike" // will cause the Observer region to re-render
+render(<App store={store} />, document.getElementById('mount'));
+store.name = "Mike" // will cause the Observer region to re-render
