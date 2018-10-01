@@ -1,4 +1,21 @@
-import { h, render } from 'preact';
-import Root from './container/template/root';
+import { h, render,Component } from 'preact';
+import {Observer} from 'mobx-preact';
+import {observable} from 'mobx';
 
-render(<Root />, document.getElementById('mount'));
+class App extends Component {
+  render() {
+     return (
+         <div>
+            {this.props.person.name}
+            <Observer>
+                {() => <div>{this.props.person.name}</div>}
+            </Observer>
+        </div>
+     )
+  }
+}
+
+const person = observable({ name: "John" })
+
+render(<App person={person} />, document.body)
+person.name = "Mike" // will cause the Observer region to re-render

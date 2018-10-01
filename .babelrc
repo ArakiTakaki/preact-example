@@ -1,7 +1,7 @@
 {
   "presets": [
     "env",
-    "stage-3",
     "preact"
-  ]
+  ],
+  "plugins": ["transform-decorators-legacy"]
 }
