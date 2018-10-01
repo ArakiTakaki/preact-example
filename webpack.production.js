@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dotenv = require('dotenv').config().parsed;
 
 let dir = __dirname + '/dist';
-if(dotenv.DIR_PATH != '') dir = dotenv.DIR_PATH;
+if (dotenv.DIR_PATH != '') dir = dotenv.DIR_PATH;
 
 module.exports = {
   mode: 'production',
@@ -23,10 +23,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx','.html']
+    extensions: ['.js', '.jsx', '.html']
   },
-  plugins:[
-    new HtmlWebpackPlugin({template: __dirname + "/public/index.html"})
+  plugins: [
+    new HtmlWebpackPlugin({ template: __dirname + "/public/index.html" })
   ],
   output: {
     path: dir,

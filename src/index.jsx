@@ -16,6 +16,6 @@ class App extends Component {
   }
 }
 
-const person = observable({ name: "John" })
-render(<App person={person} />, document.body)
+const person = observable({ name: "John" });
+render(<App person={person} />, document.getElementById('mount'));
 person.name = "Mike" // will cause the Observer region to re-render
