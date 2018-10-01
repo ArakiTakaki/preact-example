@@ -11,16 +11,15 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test: /\.html$/,
+        loader: "html-loader"
       }
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx']
-  },
-  output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
+    extensions: ['.js', '.jsx','.html']
   },
   plugins:[
     new HtmlWebpackPlugin({template: __dirname + "/public/index.html"})
