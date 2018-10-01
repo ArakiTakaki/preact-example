@@ -1,21 +1,21 @@
-import { h, render,Component } from 'preact';
-import {Observer} from 'mobx-preact';
-import {observable} from 'mobx';
+import { h, render, Component } from 'preact';
+import { observer } from 'mobx-preact';
+import { observable } from 'mobx';
 
+
+@observer
 class App extends Component {
   render() {
-     return (
-         <div>
-            {this.props.person.name}
-            <Observer>
-                {() => <div>{this.props.person.name}</div>}
-            </Observer>
-        </div>
-     )
+    console.log(this.props.person)
+    console.log(this.props.person.name)
+    return (
+      <div>
+        <div>{this.props.person.name}</div>
+      </div>
+    )
   }
 }
 
 const person = observable({ name: "John" })
-
 render(<App person={person} />, document.body)
 person.name = "Mike" // will cause the Observer region to re-render
