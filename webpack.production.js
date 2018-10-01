@@ -1,4 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dotenv = require('dotenv').config().parsed;
+
+let dir = __dirname + '/dist';
+if(dotenv.DIR_PATH != '') dir = dotenv.DIR_PATH;
 
 module.exports = {
   mode: 'production',
@@ -25,7 +29,7 @@ module.exports = {
     new HtmlWebpackPlugin({template: __dirname + "/public/index.html"})
   ],
   output: {
-    path: __dirname + '/dist',
+    path: dir,
     filename: 'js/bundle_[hash:4].js'
   }
 };
