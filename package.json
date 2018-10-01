@@ -1,0 +1,30 @@
+{
+  "name": "preact-example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "eslint": "eslint src/",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "build": "webpack"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.0.0",
+    "preact": "^8.3.1",
+    "preact-redux": "^2.0.3",
+    "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
+    "typescript": "^3.1.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.0.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-preact": "^1.1.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  }
+}
