@@ -4,7 +4,7 @@ import { observable, computed, action } from 'mobx';
 const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
 export default class CountStore {
-  //fieldがパラメータとなる。
+  //fieldがパラメータとなる
   @observable num = 0;
 
   //アクション

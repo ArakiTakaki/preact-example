@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --config ./webpack.develop.js --mode development --open",
     "prod": "webpack --config ./webpack.production.js",
     "production": "webpack --config ./webpack.production.js",
-    "mock": "json-server --watch mock/db.js --port 3001"
+    "mock": "json-server --watch mock/db.json --port 3001"
   },
   "dependencies": {
     "axios": "^0.18.0",

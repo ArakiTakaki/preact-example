@@ -1,34 +1,17 @@
-import { h, render, Component } from 'preact';
-import { observer,Provider,inject } from 'mobx-preact';
-import store from './store/state';
-import CountStore from './store/CountStore';
+import { h, render } from 'preact';
+import CountStore from './store/count_store';
+import { Provider } from 'mobx-preact';
+import MovieStore from './store/movie_store';
+import Root from './container/template/root'
 
 //この中にstoreを増やしていく。
 const stores = {
   count: new CountStore(),
+  movie: new MovieStore(),
 };
-
-//storesから使用するstoreを選択する
-@inject('count')
-@observer
-class App extends Component {
-  render() {
-    const { count } = this.props;
-    return (
-      <div>
-        Count: {count.num} <br />
-        Double count: {count.getDoubleCount} <br />
-        <button onClick={count.onIncrement}>+1</button>
-        <button onClick={count.onDecrement}>-1</button>
-        <button onClick={count.onAsyncIecrement}>After 1000ms +1</button>
-      </div>
-    )
-  }
-}
 
 render(
   <Provider {...stores}>
-    <App/>
+    <Root/>
   </Provider>
 , document.getElementById('mount'));
-store.name = "Mike" // will cause the Observer region to re-render
