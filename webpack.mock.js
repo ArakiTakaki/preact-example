@@ -1,7 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const fs = require('fs');
-fs.copyFile('develop.env','.env',function(err){
+fs.copyFile('mock.env','.env',function(err){
   if(err) console.error(err.stack);
   console.log('file copy done!');
 });
