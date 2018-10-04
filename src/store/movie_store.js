@@ -11,5 +11,4 @@ export default class MovieStore {
       console.error("movie_store awaitFetch");
     }
   }
-
 }
