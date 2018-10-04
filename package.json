@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "eslint": "eslint src/",
-    "start": "webpack-dev-server --config ./webpack.develop.js --mode development --open",
+    "dev": "webpack --config ./webpack.develop.js --watch",
     "prod": "webpack --config ./webpack.production.js",
     "production": "webpack --config ./webpack.production.js",
     "mock": "yarn concurrently \"yarn mock_backend\" \"yarn mock_frontend\"",

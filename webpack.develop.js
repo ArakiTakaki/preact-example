@@ -7,6 +7,9 @@ fs.copyFile('develop.env','.env',function(err){
 });
 
 const dotenv = require('dotenv').config().parsed;
+let dir = __dirname + '/dist';
+if (dotenv.DIR_PATH != '') dir = dotenv.DIR_PATH;
+console.log(dotenv.TEST)
 
 module.exports = {
   mode: 'development',
@@ -27,13 +30,13 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jsx','.html']
+    extensions: ['.js', '.jsx', '.html']
   },
-  plugins:[
-    new HtmlWebpackPlugin({template: __dirname + "/public/index.html"})
+  plugins: [
+    new HtmlWebpackPlugin({ template: __dirname + "/public/index.html" })
   ],
-  devServer: {
-    contentBase: './public',
-    port: 3000
+  output: {
+    path: dir,
+    filename: 'js/bundle_[hash:4].js'
   }
 };
