@@ -4,15 +4,12 @@
 
 `npm install`
 
-`cd preact-example`
-
-`cp env-example .env`
-
-初期設定でも動作はするがenv-exampleで設定しておくと楽になる。
+`npm run start`
 
 ## commands
 
 コマンド|効果
 :---|:---
-`npm run start` | プレビューを3000番portで開始する。
+`npm run mock` | プレビューを3000番portで開始する。
+`npm run dev` | 開発環境（サーバー有）で起動する。
 `npm run prod` | ファイルのBuildを行う
