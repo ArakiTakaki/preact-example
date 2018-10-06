@@ -5,12 +5,12 @@
   "license": "MIT",
   "scripts": {
     "eslint": "eslint src/",
-    "dev": "webpack --config ./scripts/webpack.develop.js --watch",
+    "start": "webpack --config ./scripts/webpack.develop.js --watch",
     "prod": "webpack --config ./scripts/webpack.production.js",
-    "production": "webpack --config ./scripts/webpack.production.js",
+    "dev": "webpack-dev-server --config ./scripts/webpack.develop.js --open",
     "mock": "yarn concurrently \"yarn mock_backend\" \"yarn mock_frontend\"",
-    "mock_frontend": "webpack-dev-server --config ./scripts/webpack.mock.js --mode development --open",
-    "mock_backend": "json-server --watch mock/db.json --port 3001"
+    "mock_frontend": "webpack-dev-server --config ./scripts/webpack.mock.js --open",
+    "mock_backend": "json-server mock/db.json --port 3001 --watch"
   },
   "dependencies": {
     "axios": "^0.18.0",
