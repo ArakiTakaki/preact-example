@@ -5,11 +5,11 @@
   "license": "MIT",
   "scripts": {
     "eslint": "eslint src/",
-    "dev": "webpack --config ./webpack.develop.js --watch",
-    "prod": "webpack --config ./webpack.production.js",
-    "production": "webpack --config ./webpack.production.js",
+    "dev": "webpack --config ./scripts/webpack.develop.js --watch",
+    "prod": "webpack --config ./scripts/webpack.production.js",
+    "production": "webpack --config ./scripts/webpack.production.js",
     "mock": "yarn concurrently \"yarn mock_backend\" \"yarn mock_frontend\"",
-    "mock_frontend": "webpack-dev-server --config ./webpack.mock.js --mode development --open",
+    "mock_frontend": "webpack-dev-server --config ./scripts/webpack.mock.js --mode development --open",
     "mock_backend": "json-server --watch mock/db.json --port 3001"
   },
   "dependencies": {
@@ -39,6 +39,7 @@
     "html-webpack-plugin": "^3.2.0",
     "json-server": "^0.14.0",
     "style-loader": "^0.23.0",
+    "svg-react-loader": "^0.4.5",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.2",
     "webpack-dev-server": "^3.1.9"
