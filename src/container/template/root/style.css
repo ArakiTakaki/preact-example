@@ -1,0 +1,13 @@
+
+.root{
+  border: 1px solid #999;
+  padding: 20px;
+}
+
+.movie-item{
+  margin-bottom: 20px;
+  border-bottom: 1px solid #999;
+}
+.movie-item:last-child{
+  border:none;
+}

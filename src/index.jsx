@@ -14,7 +14,7 @@ const stores = {
 
 render(
   <Provider {...stores}>
-    <Opti/>
     <Root/>
+    <Opti/>
   </Provider>
 , document.getElementById('mount'));

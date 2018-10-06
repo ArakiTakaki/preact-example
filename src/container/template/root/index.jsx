@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import { observer, inject } from 'mobx-preact';
+import './style.css'
 
 //storesから使用するstoreを選択する
 @inject('movie')
@@ -16,7 +17,7 @@ export default class Root extends Component {
 
     for (let item of movie.items) {
       list.push(
-        <div key={item.id}>
+        <div key={item.id} styleName="movie-item" >
           <h1>{item.name}</h1>
           <p>{item.director}</p>
           <p>{item.rating}</p>
@@ -25,7 +26,7 @@ export default class Root extends Component {
     }
 
     return (
-      <div>
+      <div styleName="root">
         {list}
       </div>
     )
