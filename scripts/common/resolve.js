@@ -1,2 +1,2 @@
 
-module.exports = ['.js', '.jsx','.html','.csv'];
+module.exports = ['.js', '.jsx','.html','.svg'];
